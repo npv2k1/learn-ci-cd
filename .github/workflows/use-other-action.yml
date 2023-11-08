@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+name: Use other action
+
+jobs:
+  hello:
+    name: Use other action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Hello
+        uses: npv2k1/learn-ci-cd/actions/hello@master
